@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Airbound</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Airbound game">
+      <canvas id="gameCanvas" aria-label="Flappy Bird arcade canvas"></canvas>
+
+      <div class="top-bar">
+        <button id="pauseBtn" class="icon-button" aria-label="Pause game">
+          <span class="pause-icon" aria-hidden="true"></span>
+        </button>
+        <div class="score-card" aria-live="polite">
+          <span>Score</span>
+          <strong id="scoreDisplay">0</strong>
+        </div>
+        <div class="best-card">
+          <span>Best</span>
+          <strong id="bestDisplay">0</strong>
+        </div>
+      </div>
+
+      <section id="openingScreen" class="screen opening-screen is-visible">
+        <div class="opening-card">
+          <div class="opening-orbit" aria-hidden="true">
+            <span class="opening-bird"></span>
+          </div>
+          <p class="eyebrow">Booting Arcade System</p>
+          <h1>Airbound</h1>
+          <div class="boot-line" aria-hidden="true"><span></span></div>
+          <p class="opening-copy">Neon pipes online. City winds calibrated. Take flight.</p>
+          <button id="enterBtn" class="neon-button">Enter Arcade</button>
+        </div>
+      </section>
+
+      <section id="startScreen" class="screen">
+        <div class="card hero-card">
+          <p class="eyebrow">Modern Arcade</p>
+          <h1>Airbound</h1>
+          <p class="copy">Tap, press Space, or click to flap through endless neon pipes. Chain fast passes for combo points.</p>
+          <div class="hero-stats" aria-label="Player progress">
+            <div>
+              <span>Best</span>
+              <strong id="heroBest">0</strong>
+            </div>
+            <div>
+              <span>Skins</span>
+              <strong id="heroSkins">1/5</strong>
+            </div>
+            <div>
+              <span>Combo</span>
+              <strong id="heroCombo">x1</strong>
+            </div>
+          </div>
+          <div class="instructions">
+            <span>Space / W / Up</span>
+            <span>Tap on mobile</span>
+            <span>P or Esc pauses</span>
+          </div>
+          <button id="startBtn" class="neon-button">Start Game</button>
+        </div>
+        <div class="side-grid">
+          <article class="card">
+            <h2>Skins</h2>
+            <div id="skinList" class="skin-list"></div>
+          </article>
+          <article class="card achievements-card">
+            <h2>Achievements</h2>
+            <div id="achievementList" class="achievements"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="pauseScreen" class="screen compact">
+        <div class="card dialog-card">
+          <p class="eyebrow">Paused</p>
+          <h2>Take a Breath</h2>
+          <button id="resumeBtn" class="neon-button">Resume</button>
+          <button id="restartFromPauseBtn" class="ghost-button">Restart</button>
+        </div>
+      </section>
+
+      <section id="gameOverScreen" class="screen compact">
+        <div class="card dialog-card">
+          <p class="eyebrow">Game Over</p>
+          <h2 id="resultTitle">Nice Run</h2>
+          <div class="result-grid">
+            <div><span>Score</span><strong id="finalScore">0</strong></div>
+            <div><span>Best</span><strong id="finalBest">0</strong></div>
+            <div><span>Combo</span><strong id="finalCombo">x1</strong></div>
+          </div>
+          <div id="unlockMessage" class="unlock-message"></div>
+          <button id="restartBtn" class="neon-button">Restart</button>
+          <button id="homeBtn" class="ghost-button">Home</button>
+        </div>
+      </section>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
